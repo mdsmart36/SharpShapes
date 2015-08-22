@@ -8,14 +8,25 @@ namespace Shapes
 {
     public class Rectangle : Quadrilateral
     {
+        public Rectangle()
+        {
+
+        }
+
+        public Rectangle(float length, float width)
+        {
+            this.Side1 = length;
+            this.Side2 = width;
+        }
+
         public override float Area()
         {
-            return this.side1 * this.side2;
+            return this.Side1 * this.Side2;
         }
 
         public override float Perimeter()
         {
-            return (this.side1 * 2) + (this.side2 * 2);
+            return (this.Side1 * 2) + (this.Side2 * 2);
         }
     }
 }

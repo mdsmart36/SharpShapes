@@ -9,6 +9,14 @@ namespace UnitTestShapes
     {
         public class MockQuadrilateral : Quadrilateral
         {
+            public MockQuadrilateral(float side1, float side2, float side3, float side4)
+            {
+                this.Side1 = side1;
+                this.Side2 = side2;
+                this.Side3 = side3;
+                this.Side4 = side4;
+            }
+
             public override float Area()
             {
                 throw new NotImplementedException();
@@ -18,46 +26,35 @@ namespace UnitTestShapes
         [TestMethod]
         public void TestQuadrilateralComputePerimeter()
         {
-            MockQuadrilateral myQuad = new MockQuadrilateral();
-            myQuad.side1 = 2.3F;
-            myQuad.side2 = 3.1F;
-            myQuad.side3 = 1.9F;
-            myQuad.side4 = 3.9F;
-            
+            MockQuadrilateral myQuad = new MockQuadrilateral(2.3F, 3.1F, 1.9F, 3.9F);
             Assert.AreEqual(11.2F, myQuad.Perimeter());
         }
 
         [TestMethod]
         public void TestSquareComputeArea()
         {
-            Square mySquare = new Square();
-            mySquare.side1 = 10;
+            Square mySquare = new Square(10);
             Assert.AreEqual(100, mySquare.Area());
         }
 
         [TestMethod]
         public void TestSquareComputePerimeter()
         {
-            Square mySquare = new Square();
-            mySquare.side1 = 20;
+            Square mySquare = new Square(20);
             Assert.AreEqual(80, mySquare.Perimeter());
         }
 
         [TestMethod]
         public void TestRectangleComputeArea()
         {
-            Rectangle myRectangle = new Rectangle();
-            myRectangle.side1 = 5;
-            myRectangle.side2 = 10;
+            Rectangle myRectangle = new Rectangle(5, 10);
             Assert.AreEqual(50, myRectangle.Area());
         }
 
         [TestMethod]
         public void TestRectangleComputePerimeter()
         {
-            Rectangle myRectangle = new Rectangle();
-            myRectangle.side1 = 5;
-            myRectangle.side2 = 10;
+            Rectangle myRectangle = new Rectangle(5, 10);
             Assert.AreEqual(30, myRectangle.Perimeter());
         }
     }
