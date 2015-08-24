@@ -53,9 +53,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="AbstractClassTest.cs" />
+    <Compile Include="RectangleTests.cs" />
+    <Compile Include="ShapeClassTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuadrilateralTest.cs" />
+    <Compile Include="QuadrilateralClassTests.cs" />
+    <Compile Include="SquareTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Shapes\Shapes.csproj">

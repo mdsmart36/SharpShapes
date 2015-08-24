@@ -8,11 +8,11 @@ namespace Shapes
 {
     public class Square : Rectangle
     {
-        public Square(float side1)
-        {
-            this.Side1 = side1;
-        }
-
+        // constructors
+        public Square() { }
+        public Square(float side1) : base(side1, side1) { }
+        
+        // methods
         public override float Area()
         {
             return this.Side1 * this.Side1;
