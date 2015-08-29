@@ -71,8 +71,23 @@ namespace UnitTestShapes
             Assert.AreEqual(quad1.Perimeter(), quad2.Perimeter());
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void TestQuadNoNegativeSides()
+        {
+            MockQuadrilateral quad1 = new MockQuadrilateral();
+            quad1.Side1 = 2;
+            quad1.Side2 = 2;
+            quad1.Side3 = 2;
+            quad1.Side4 = -2;
+        }
 
-        
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void TestQuadNoNegativeSidesInConstructor()
+        {
+            MockQuadrilateral quad = new MockQuadrilateral(2, -2, 2, 2);
+        }
         
     }
 }

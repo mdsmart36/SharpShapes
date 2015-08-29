@@ -10,7 +10,7 @@ namespace Shapes
     {
         public AQuadrilateral() : base() { }
 
-        public AQuadrilateral(float side1, float side2, float side3, float side4)
+        public AQuadrilateral(float side1, float side2, float side3, float side4) : base()
         {
             this.Side1 = side1;
             this.Side2 = side2;
@@ -18,10 +18,72 @@ namespace Shapes
             this.Side4 = side4;
         }
 
-        public float Side1 { get; set; }
-        public float Side2 { get; set; }
-        public float Side3 { get; set; }
-        public float Side4 { get; set; }
+        private float side1;
+        private float side2;
+        private float side3;
+        private float side4;
+
+        public float Side1
+        {
+            get { return side1; }
+            set
+            {
+                if (value <= 0.0)
+                {
+                    throw new ArgumentException();
+                }
+                else
+                {
+                    side1 = value;
+                }
+            }
+        }
+        public float Side2
+        {
+            get { return side2; }
+            set
+            {
+                if (value <= 0.0)
+                {
+                    throw new ArgumentException();
+                }
+                else
+                {
+                    side2 = value;
+                }
+            }
+        }
+        public float Side3
+        {
+            get { return side3; }
+            set
+            {
+                if (value <= 0.0)
+                {
+                    throw new ArgumentException();
+                }
+                else
+                {
+                    side3 = value;
+                }
+            }
+        }
+        public float Side4
+        {
+            get { return side4; }
+            set
+            {
+                if (value <= 0.0)
+                {
+                    throw new ArgumentException();
+                }
+                else
+                {
+                    side4 = value;
+                }
+            }
+        }
+            
 
         public abstract override float Area();
         public override float Perimeter()

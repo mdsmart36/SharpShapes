@@ -8,24 +8,35 @@ namespace Shapes
 {
     public class Rectangle : AQuadrilateral
     {
-        public Rectangle()
-        {
-
-        }
+        // constructors
+        public Rectangle() : base() {  }
         public Rectangle(float length, float width)
         {
             this.Side1 = length;
             this.Side2 = width;
         }
 
+        // methods
         public override float Area()
         {
-            return this.Side1 * this.Side2;
+            if (Side1 == 0 || Side2 == 0)
+            {
+                throw new ArgumentException();
+            } else
+            {
+                return this.Side1 * this.Side2;
+            }
         }
 
         public override float Perimeter()
         {
-            return (this.Side1 * 2) + (this.Side2 * 2);
+            if (Side1 == 0 || Side2 == 0)
+            {
+                throw new ArgumentException();
+            } else
+            {
+                return (this.Side1 * 2) + (this.Side2 * 2);
+            }
         }
     }
 }
