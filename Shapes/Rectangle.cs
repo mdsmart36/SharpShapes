@@ -10,19 +10,16 @@ namespace Shapes
     {
         // constructors
         public Rectangle() : base() {  }
-        public Rectangle(float length, float width)
-        {
-            this.Side1 = length;
-            this.Side2 = width;
-        }
-
+        public Rectangle(float length, float width) : base( length, width, length, width) { }
+  
         // methods
         public override float Area()
         {
             if (Side1 == 0 || Side2 == 0)
             {
                 throw new ArgumentException();
-            } else
+            }
+            else
             {
                 return this.Side1 * this.Side2;
             }
@@ -33,7 +30,8 @@ namespace Shapes
             if (Side1 == 0 || Side2 == 0)
             {
                 throw new ArgumentException();
-            } else
+            }
+            else
             {
                 return (this.Side1 * 2) + (this.Side2 * 2);
             }

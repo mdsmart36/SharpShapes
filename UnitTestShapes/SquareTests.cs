@@ -35,9 +35,9 @@ namespace UnitTestShapes
         [TestMethod]
         public void TestSquareConstructor4()
         {
-            // test that side3 and side4 remain in default state if not specifically set
+            // test that side3 and side4 mirror side1 and side2
             Square square = new Square(5);
-            Assert.AreEqual(0, square.Side3);
+            Assert.AreEqual(square.Side1, square.Side3);
         }
 
         [TestMethod]
