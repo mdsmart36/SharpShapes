@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Shapes
 {
@@ -93,6 +94,25 @@ namespace Shapes
                 throw new ArgumentException();
             }
             return Side1 + Side2 + Side3 + Side4;
+        }
+
+        public override void Scale(int percent)
+        {
+            if (percent == 0 || percent <= -100)
+            {
+                throw new ArgumentException();
+            }
+            
+            this.Side1 = Side1 * (100 + percent) / 100;
+            this.Side2 = Side2 * (100 + percent) / 100;
+            this.Side3 = Side3 * (100 + percent) / 100;
+            this.Side4 = Side4 * (100 + percent) / 100;
+
+        }
+
+        public override void DrawOnto(Canvas theCanvas, int x, int y)
+        {
+            
         }
     }
 }

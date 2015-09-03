@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Windows.Controls;
 
 namespace Shapes
 {
@@ -20,6 +21,8 @@ namespace Shapes
             this.FillColor = Color.Bisque;
         }
 
+        public virtual void DrawOnto(Canvas theCanvas, int x, int y) { throw new NotImplementedException(); }
+        public virtual void Scale(int percent) { throw new NotImplementedException(); }
         public abstract float Area();
         public abstract float Perimeter();
     }

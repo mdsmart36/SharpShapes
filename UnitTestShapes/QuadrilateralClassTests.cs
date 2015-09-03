@@ -88,6 +88,37 @@ namespace UnitTestShapes
         {
             MockQuadrilateral quad = new MockQuadrilateral(2, -2, 2, 2);
         }
-        
+
+        [TestMethod]
+        public void QuadScalingUpTest()
+        {
+            MockQuadrilateral quad2 = new MockQuadrilateral(2, 2, 2, 2);
+            quad2.Scale(50);
+            Assert.AreEqual(3, quad2.Side1);
+            Assert.AreEqual(3, quad2.Side2);
+            Assert.AreEqual(3, quad2.Side3);
+            Assert.AreEqual(3, quad2.Side4);
+        }
+
+        [TestMethod]
+        public void QuadScalingDownTest()
+        {
+            MockQuadrilateral quad2 = new MockQuadrilateral(10, 10, 10, 10);
+            quad2.Scale(-50);
+            Assert.AreEqual(5, quad2.Side1);
+            Assert.AreEqual(5, quad2.Side2);
+            Assert.AreEqual(5, quad2.Side3);
+            Assert.AreEqual(5, quad2.Side4);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void InvalidScaleArgument()
+        {
+            MockQuadrilateral quad2 = new MockQuadrilateral(2, 2, 2, 2);
+            quad2.Scale(0);
+
+        }
+
     }
 }
