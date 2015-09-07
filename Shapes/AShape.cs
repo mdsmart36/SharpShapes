@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Drawing;
+//using System.Drawing;
+using System.Windows.Media;
 using System.Windows.Controls;
 
 namespace Shapes
@@ -17,8 +18,10 @@ namespace Shapes
 
         public AShape()
         {
-            this.BorderColor = Color.AliceBlue;
-            this.FillColor = Color.Bisque;
+            //this.BorderColor = Color.AliceBlue;
+            //this.FillColor = Color.Bisque;
+            this.BorderColor = Colors.AliceBlue;
+            this.FillColor = Colors.Bisque;
         }
 
         public virtual void DrawOnto(Canvas theCanvas, int x, int y) { throw new NotImplementedException(); }

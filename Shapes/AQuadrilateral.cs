@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Shapes;
+using System.Windows.Media;
+using System.Windows;
+//using System.Drawing;
 
 namespace Shapes
 {
@@ -110,9 +114,30 @@ namespace Shapes
 
         }
 
+        public Polygon CreatePolygon()
+        {
+            Polygon poly = new Polygon();
+            poly.Fill = new SolidColorBrush(this.FillColor);
+            poly.Stroke = new SolidColorBrush(this.BorderColor);
+            poly.StrokeThickness = 2;
+            return poly;
+        }
+
         public override void DrawOnto(Canvas theCanvas, int x, int y)
         {
-            
+            Polygon myPolygon = CreatePolygon();
+            Point p1 = new Point(x, y);
+            Point p2 = new Point(x, y + this.Side2); // Or this.Right
+            Point p3 = new Point(x + this.Side3, y + this.Side4);
+            Point p4 = new Point(x + this.Side1, y);
+            PointCollection myPoints = new PointCollection();
+            myPoints.Add(p1);
+            myPoints.Add(p2);
+            myPoints.Add(p3);
+            myPoints.Add(p4);
+            myPolygon.Points = myPoints;
+
+            theCanvas.Children.Add(myPolygon);
         }
     }
 }

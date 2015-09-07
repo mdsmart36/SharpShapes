@@ -35,9 +35,25 @@ namespace SharpShapes
             combo1.ItemsSource = Assembly.GetAssembly(typeof(Shapes.AShape)).GetTypes().Where(shapeType => shapeType.IsSubclassOf(typeof(AQuadrilateral)));
         }
 
+        public int NumberOfArguments(string className)
+        {
+            var theClass = Assembly.GetAssembly(typeof(Shapes.AShape)).GetTypes().Where(shapeType => shapeType.Name == className).First(); // This is a Collection. Get the First
+            var theClassConstructor = theClass.GetConstructors().First();
+            return theClassConstructor.GetParameters().Length;
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Clicked the Button");
+            MessageBox.Show("Button Clicked!");
         }
+
+        private void combo1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var classType = combo1.SelectedValue as Type;
+            shapeWidth.IsEnabled = true;
+            int argCount = NumberOfArguments(classType.Name);
+            shapeHeight.IsEnabled = (argCount > 1);
+        }
+        
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shapes;
 using System.Drawing;
+using System.Windows.Media;
 
 namespace UnitTestShapes
 {
@@ -91,8 +92,8 @@ namespace UnitTestShapes
         public void TestSquareDefaultColors()
         {
             Square square = new Square();
-            Assert.AreEqual(Color.AliceBlue, square.BorderColor);
-            Assert.AreEqual(Color.Bisque, square.FillColor);
+            Assert.AreEqual(Colors.AliceBlue, square.BorderColor);
+            Assert.AreEqual(Colors.Bisque, square.FillColor);
         }
 
         [TestMethod]

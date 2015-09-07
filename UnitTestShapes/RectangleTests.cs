@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shapes;
 using System.Drawing;
+using System.Windows.Media;
 
 namespace UnitTestShapes
 {
@@ -77,8 +78,8 @@ namespace UnitTestShapes
         public void TestRectangleDefaultColors()
         {
             Shapes.Rectangle rect = new Shapes.Rectangle();
-            Assert.AreEqual(Color.AliceBlue, rect.BorderColor);
-            Assert.AreEqual(Color.Bisque, rect.FillColor);
+            Assert.AreEqual(Colors.AliceBlue, rect.BorderColor);
+            Assert.AreEqual(Colors.Bisque, rect.FillColor);
         }
 
         [TestMethod]
