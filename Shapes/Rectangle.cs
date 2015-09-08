@@ -9,9 +9,10 @@ namespace Shapes
     public class Rectangle : AQuadrilateral
     {
         // constructors
-        public Rectangle() : base() {  }
+        
         public Rectangle(float length, float width) : base( length, width, length, width) { }
-  
+        public Rectangle() : base() { }
+
         // methods
         public override float Area()
         {

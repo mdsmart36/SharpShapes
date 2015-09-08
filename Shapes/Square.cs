@@ -9,8 +9,9 @@ namespace Shapes
     public class Square : Rectangle
     {
         // constructors
-        public Square() : base() { }
+        
         public Square(float side1) : base(side1, side1) { }
+        public Square() : base() { }
 
         // methods
         public override float Area()

@@ -32,11 +32,13 @@ namespace SharpShapes
         {
             List<string> stuff = new List<string>();
             var quadType = typeof(AQuadrilateral);
+            // looks at the current assembly, get all the types that inherit from Quadrilateral, populates dropdown
             combo1.ItemsSource = Assembly.GetAssembly(typeof(Shapes.AShape)).GetTypes().Where(shapeType => shapeType.IsSubclassOf(typeof(AQuadrilateral)));
         }
 
         public int NumberOfArguments(string className)
         {
+            // determines the number of arguments in the first constructor of Rectangle and Square
             var theClass = Assembly.GetAssembly(typeof(Shapes.AShape)).GetTypes().Where(shapeType => shapeType.Name == className).First(); // This is a Collection. Get the First
             var theClassConstructor = theClass.GetConstructors().First();
             return theClassConstructor.GetParameters().Length;
@@ -44,11 +46,13 @@ namespace SharpShapes
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            // placeholder code to demonstrate when a button is clicked
             MessageBox.Show("Button Clicked!");
         }
 
         private void combo1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            // enables or disables a text input box based on number of arguments in the shape constructor
             var classType = combo1.SelectedValue as Type;
             shapeWidth.IsEnabled = true;
             int argCount = NumberOfArguments(classType.Name);
