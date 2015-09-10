@@ -56,6 +56,7 @@ namespace SharpShapes
             var classType = combo1.SelectedValue as Type;
             shapeWidth.IsEnabled = true;
             int argCount = NumberOfArguments(classType.Name);
+            // when shape selected is not a square
             shapeHeight.IsEnabled = (argCount > 1);
         }
         
